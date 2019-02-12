@@ -1,3 +1,4 @@
 export const cols = {
-    XXX:"XXX"
+    GAMES: "games",
+    SCORES: "scores"
 }
