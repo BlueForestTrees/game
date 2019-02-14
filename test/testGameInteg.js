@@ -14,8 +14,10 @@ describe('game', function () {
         type: "qui2",
         leftId: createObjectId(),
         leftBqt: 0.3654684,
+        leftName: "Coca",
         fragment: "impact",
         fragmentId: createObjectId(),
+        fragmentName: "Sucre",
         questions: [
             {rightId: createObjectId(), coef: 0.0210648},
             {rightId: createObjectId(), coef: 9.3514684},

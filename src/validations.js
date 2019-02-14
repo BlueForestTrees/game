@@ -1,5 +1,6 @@
 import {check} from 'express-validator/check'
 import {objectNoEx, object} from "mongo-registry"
+
 const debug = require('debug')('api:game')
 import {decode} from "jsonwebtoken"
 
@@ -25,3 +26,16 @@ export const setUserIdIn = field => (o, req) => {
 
     return o
 }
+
+export const optionnalPageSize = [
+    (req, res, next) => {
+        if (!req.params.ps) {
+            req.params.ps = 10
+        }
+        next()
+    },
+    check("ps").isInt({
+        min: 1,
+        max: 30
+    }).withMessage(`must be an integer between 1 and 30 (default to ${10})`).toInt()
+]
