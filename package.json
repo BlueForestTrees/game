@@ -1,6 +1,6 @@
 {
   "name": "game",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "game",
   "main": "dist/index.js",
   "repository": "https://github.com/BlueForestTrees/game.git",

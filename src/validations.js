@@ -39,3 +39,5 @@ export const optionnalPageSize = [
         max: 30
     }).withMessage(`must be an integer between 1 and 30 (default to ${10})`).toInt()
 ]
+
+export const validOptionalQ = check('q').optional().exists().isLength({min: 1, max: 30})
