@@ -4,7 +4,7 @@ import {cols} from "../collections"
 import {mongoId, optionnalPageSize, validOptionalQ} from "../validations"
 import regexEscape from "regex-escape"
 
-const searchMixin = {type: 1, fragmentName: 1, leftName: 1}
+const searchMixin = {date: 1, type: 1, fragmentName: 1, leftName: 1}
 const router = Router()
 
 router.get("/api/game/:_id",
@@ -30,7 +30,7 @@ router.get("/api/game",
         }
         return col(cols.GAMES)
             .find(filter, searchMixin)
-            .sort({_id: -1})
+            .sort({date: -1})
             .limit(ps)
             .toArray()
     }))

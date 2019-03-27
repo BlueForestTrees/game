@@ -1,4 +1,4 @@
-import {mongoId, number, setUserIdIn, validUser} from "../validations"
+import {mongoId, number, setUserIdIn, validUser, set} from "../validations"
 import {check} from 'express-validator/check'
 import {Router, run} from "express-blueforest"
 import {col} from "mongo-registry"
@@ -20,6 +20,7 @@ router.post("/api/game",
     mongoId("questions.*.rightId"),
     number("questions.*.coef"),
     run(setUserIdIn("oid")),
+    run(set("date", ()=>new Date())),
     run(game => col(cols.GAMES)
         .insertOne(game)
         .then(res => res.result))

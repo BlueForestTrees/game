@@ -23,7 +23,11 @@ export const validUser = (req, res, next) => {
 }
 export const setUserIdIn = field => (o, req) => {
     o[field] = req.user._id
+    return o
+}
 
+export const set = (field, clb) => o => {
+    o[field] = clb()
     return o
 }
 
