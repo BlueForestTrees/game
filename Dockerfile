@@ -5,8 +5,8 @@ COPY package.json ./build/
 COPY src/ ./build/src
 
 WORKDIR /build
-RUN npm install
-RUN npm run build
+RUN yarn install
+RUN yarn build
 
 FROM node:alpine
 COPY --from=api-builder /build/package.json ./

@@ -1,5 +1,6 @@
 const debug = require('debug')('api:game')
 import {version, name} from './../package.json'
+import fs from "fs"
 
 const ENV = {
     NAME:name,
@@ -16,9 +17,17 @@ const ENV = {
 
     NODE_ENV: process.env.NODE_ENV || null,
     VERSION: version,
-    MORGAN: process.env.MORGAN || ':status :method :url :response-time ms - :res[content-length]',
+
+    RK_GAME_UPSERT: process.env.RK_GAME_UPSERT || "game-upsert",
+    RB_PATH: process.env.RB_PATH || "mq.json"
 }
 
-debug({ENV})
+ENV.RB = JSON.parse(fs.readFileSync(ENV.RB_PATH, 'utf8'))
+
+if (debug.enabled) {
+    debug({ENV})
+} else {
+    console.log(JSON.stringify(ENV))
+}
 
 export default ENV

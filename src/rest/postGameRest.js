@@ -1,8 +1,8 @@
 import {mongoId, number, setUserIdIn, validUser, set} from "../validations"
 import {check} from 'express-validator/check'
 import {Router, run} from "express-blueforest"
-import {col} from "mongo-registry"
-import {cols} from "../collections"
+import {createSender} from "simple-rbmq"
+import ENV from "./../env"
 
 const router = Router()
 module.exports = router
@@ -21,10 +21,5 @@ router.post("/api/game",
     number("questions.*.coef"),
     run(setUserIdIn("oid")),
     run(set("date", ()=>new Date())),
-    run(game => col(cols.GAMES)
-        .insertOne(game)
-        .then(res => res.result))
+    run(createSender(ENV.RB.exchange, ENV.RK_GAME_UPSERT))
 )
-
-
-
