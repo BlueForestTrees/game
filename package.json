@@ -1,6 +1,6 @@
 {
   "name": "game",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "game",
   "main": "dist/index.js",
   "repository": "https://github.com/BlueForestTrees/game.git",
@@ -39,7 +39,7 @@
     "jsonwebtoken": "8.4.0",
     "lodash": "4.17.11",
     "mongo-registry": "1.0.15",
-    "simple-rbmq": "1.0.23"
+    "simple-rbmq": "2.0.2"
   },
   "babel": {
     "presets": [
