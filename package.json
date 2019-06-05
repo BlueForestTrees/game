@@ -39,7 +39,7 @@
     "jsonwebtoken": "8.4.0",
     "lodash": "4.17.11",
     "mongo-registry": "1.0.15",
-    "simple-rbmq": "2.0.2"
+    "simple-rbmq": "2.0.6"
   },
   "babel": {
     "presets": [
