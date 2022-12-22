@@ -36,7 +36,7 @@
     "express-blueforest": "1.1.11",
     "express-validator": "5.3.0",
     "items-service": "1.0.13",
-    "jsonwebtoken": "8.4.0",
+    "jsonwebtoken": "9.0.0",
     "lodash": "4.17.11",
     "mongo-registry": "1.0.15",
     "simple-rbmq": "2.0.6"
